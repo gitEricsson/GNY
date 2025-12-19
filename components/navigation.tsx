@@ -62,14 +62,14 @@ export default function Navigation() {
             className="flex items-center gap-2 transition-transform hover:scale-105 duration-300"
           >
             <Image
-              src="/logo-203.png"
+              src="/logo.png"
               alt="Gloria & Young HR Consulting"
               width={50}
               height={50}
               className="w-12 h-12"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-navy text-lg leading-tight">
+              <span className="font-bold text-navy text-lg leading-tight font-serif">
                 Gloria & Young
               </span>
               <span className="text-gold text-xs tracking-wide">

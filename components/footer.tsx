@@ -96,14 +96,14 @@ export default function Footer() {
           <div className="space-y-6 lg:col-span-1">
             <div className="flex items-center gap-2">
               <Image
-                src="/logo-203.png"
+                src="/logo.png"
                 alt="Gloria & Young HR Consulting"
                 width={50}
                 height={50}
                 className="w-12 h-12"
               />
               <div className="flex flex-col">
-                <span className="font-bold text-white text-lg leading-tight">
+                <span className="font-bold text-white text-lg leading-tight font-serif">
                   Gloria & Young
                 </span>
                 <span className="text-gold text-xs tracking-wide">

@@ -24,7 +24,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { LoadingContext } from '../layout';
+import { LoadingContext } from '@/components/client-layout-wrapper';
 
 // --- Components ---
 
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 Systems.
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
               We combine strategic insight with practical execution to create
               workplaces where talent, culture, and business strategy work
               seamlessly together.
@@ -225,7 +225,7 @@ export default function AboutPage() {
                   Unlocking <br /> Workforce <br /> Potential.
                 </h2>
                 <div className="h-2 w-24 bg-gold mb-8" />
-                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   Gloria & Young HR Consulting Ltd is a people–focused
                   consulting firm. Built on the pillars of{' '}
                   <strong>integrity, excellence, and innovation</strong>, we
@@ -252,7 +252,7 @@ export default function AboutPage() {
                   <h3 className="text-gold text-sm uppercase tracking-widest mb-3">
                     Our Core Focus
                   </h3>
-                  <p className="text-xl font-light">
+                  <p className="text-lg font-light">
                     Delivering strategic, data-driven HR solutions that enhance
                     organizational performance, improve employee productivity,
                     and support sustainable business growth.
@@ -262,7 +262,7 @@ export default function AboutPage() {
                   <h3 className="text-gold text-sm uppercase tracking-widest mb-3">
                     Mission
                   </h3>
-                  <p className="text-xl font-light">
+                  <p className="text-lg font-light">
                     To provide innovative, ethical, and result-oriented HR
                     solutions tailored to the unique needs of every client.
                   </p>
@@ -271,7 +271,7 @@ export default function AboutPage() {
                   <h3 className="text-gold text-sm uppercase tracking-widest mb-3">
                     Vision
                   </h3>
-                  <p className="text-xl font-light">
+                  <p className="text-lg font-light">
                     To become a leading HR consulting firm recognized for
                     transforming workplaces and empowering people across the
                     globe.
@@ -295,7 +295,7 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 font-serif">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               The I.I.E.E.P Framework that guides every interaction.
             </p>
           </div>
@@ -313,7 +313,7 @@ export default function AboutPage() {
               index={1}
               icon={Shield}
               title="Integrity"
-              desc="We do what is right—always—with honesty, transparency, and accountability."
+              desc="We do what is right always, with honesty, transparency, and accountability."
             />
             <ValueCard
               letter="E"
@@ -389,7 +389,10 @@ export default function AboutPage() {
                 </div>
                 <div className="mt-10">
                   <Link href="/#contact">
-                    <Button className="bg-navy text-white border hover:border-navy hover:bg-white hover:text-navy px-8 py-6 text-lg transition-all duration-300 relative overflow-hidden group">
+                    <Button
+                      size="lg"
+                      className="bg-navy text-white border hover:border-navy hover:bg-white hover:text-navy text-lg transition-all duration-300 relative overflow-hidden group"
+                    >
                       Start Your Transformation{' '}
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       <div className="absolute inset-0 bg-white/20 transform scale-0 group-active:scale-150 transition-transform duration-500 rounded-full origin-center"></div>

@@ -1,17 +1,7 @@
-'use client';
-
-import { useState, useEffect, createContext } from 'react';
-import type React from 'react';
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
-import { LoadingScreen } from '@/components/loading-screen';
-import GlobalHeader from '@/components/global-header';
-import Footer from '@/components/footer';
-
-// Create a context for the loading state
-export const LoadingContext = createContext<boolean | undefined>(undefined);
+import ClientLayoutWrapper from '@/components/client-layout-wrapper';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,7 +13,7 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 });
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title:
     'Gloria & Young HR Consulting Ltd - Your People. Your Growth. Our Expertise.',
   description:
@@ -37,8 +27,8 @@ const metadata: Metadata = {
     'performance management',
   ],
   icons: {
-    icon: '/logo-203.png',
-    apple: '/logo-203.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 };
 
@@ -47,29 +37,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
-
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${playfair.className} font-sans antialiased`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
-        <LoadingScreen onComplete={() => setIsLoadingComplete(true)} />
-        <GlobalHeader />
-        <div
-          style={{
-            opacity: isLoadingComplete ? 1 : 0,
-            pointerEvents: isLoadingComplete ? 'auto' : 'none',
-            transition: 'opacity 0.5s ease-in-out',
-          }}
-        >
-          <LoadingContext.Provider value={isLoadingComplete}>
-            {children}
-          </LoadingContext.Provider>
-        </div>
-        <Footer />
-
-        <Analytics />
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );

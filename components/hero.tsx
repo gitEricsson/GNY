@@ -168,7 +168,7 @@ export default function Hero({
         ))}
       </motion.div> */}
 
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-0 lg:gap-12 items-center relative z-10">
         <motion.div
           initial={false}
           animate={
@@ -184,7 +184,7 @@ export default function Hero({
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy text-balance mb-12">
               Our Expertise
             </h1>
-            <p className="text-xl text-gray-800 leading-relaxed max-w-xl">
+            <p className="text-lg text-gray-800 leading-relaxed max-w-xl">
               At Gloria & Young HR Consulting Ltd, we help businesses build
               stronger teams, optimize workplace systems, and create
               environments where people thrive.
@@ -261,13 +261,13 @@ export default function Hero({
               : { opacity: 0, scale: 0.9 }
           }
           transition={{ duration: 0.8, delay: isLoadingComplete ? 0.7 : 0 }}
-          className="relative h-[600px] hidden lg:block will-change-transform"
+          className="relative h-[400px] md:h-[600px] lg:h-[600px] lg:block will-change-transform"
         >
           <Image
             src="/hand-drawn-african-american-businesswoman-cartoon-illustration.png"
             alt="HR Consultation"
             fill
-            className="object-cover"
+            className="object-contain md:object-cover lg:object-cover"
             priority
           />
 
@@ -276,10 +276,10 @@ export default function Hero({
             initial={{ opacity: 0, y: 50 }}
             animate={isLoadingComplete ? { opacity: 1, y: 0 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute top-85 -left-10"
+            className="absolute top-62 lg:top-85 md:top-85 -left-2 md:-left-10 lg:-left-10"
           >
             <motion.div
-              className="bg-white p-3 rounded-lg shadow-xl"
+              className="bg-white p-2.5 rounded-lg shadow-xl"
               animate={isLoadingComplete ? { y: [0, -15, 0] } : { y: 0 }}
               transition={{
                 repeat: Number.POSITIVE_INFINITY,
@@ -288,13 +288,18 @@ export default function Hero({
                 delay: 1.2,
               }}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 md:gap-3 lg:gap-3">
                 <div className="bg-green-100 p-2 rounded-full flex items-center justify-center">
-                  <Award className="w-6 h-6 text-green-600" size={24} />
+                  <Award
+                    className="w-4 h-4 md:w-6 md:h-6 lg:w-6 lg:h-6 text-green-600"
+                    size={24}
+                  />
                 </div>
                 <div>
-                  <div className="text-lg font-bold text-navy">100%</div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-sm md:text-lg lg:text-lg font-bold text-navy">
+                    100%
+                  </div>
+                  <div className="text-xs md:text-xs lg:text-xs text-gray-500">
                     Client Satisfaction
                   </div>
                 </div>

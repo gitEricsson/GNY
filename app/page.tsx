@@ -9,7 +9,7 @@ import Contact from '@/components/contact';
 import { ScrollingText } from '@/components/scrolling-text';
 import Testimonials from '@/components/testimonials';
 import { useContext } from 'react';
-import { LoadingContext } from './layout';
+import { LoadingContext } from '@/components/client-layout-wrapper';
 
 export default function Home() {
   const isLoadingComplete = useContext(LoadingContext);

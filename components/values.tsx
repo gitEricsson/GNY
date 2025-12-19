@@ -140,7 +140,7 @@ import {
   Award,
   ArrowUpRight,
 } from 'lucide-react';
-import { LoadingContext } from '@/app/layout'; // Ensure path is correct based on your folder structure
+import { LoadingContext } from '@/components/client-layout-wrapper';
 
 const values = [
   {

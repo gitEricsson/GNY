@@ -98,7 +98,7 @@
 //             <h2 className="text-4xl md:text-5xl font-bold text-balance">
 //               Contact <span className="text-gold">Us</span>
 //             </h2>
-//             <p className="text-xl text-gray-100">
+//             <p className="text-lg text-gray-100">
 //               Get in touch with us today to see how we can help you
 //             </p>
 //           </div>
@@ -354,6 +354,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react'; // Added Loader2
 import { motion } from 'framer-motion';
 
@@ -366,9 +367,8 @@ export default function Contact() {
     message: '',
   });
 
+  const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<{
     [key: string]: string;
   }>({});
@@ -410,9 +410,7 @@ export default function Contact() {
         return newErrors;
       });
     }
-    // Reset success/error messages on input change
-    setIsSuccess(false);
-    setError(null);
+    // No need to reset toast messages on input change - toast notifications are auto-dismissed
   };
 
   const validateForm = () => {
@@ -431,8 +429,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
-    setIsSuccess(false);
 
     if (!validateForm()) {
       return;
@@ -440,7 +436,11 @@ export default function Contact() {
 
     const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
     if (!endpoint) {
-      setError('Contact form is not configured. Please try again later.');
+      toast({
+        title: 'Configuration Error',
+        description: 'Contact form is not configured. Please try again later.',
+        variant: 'destructive',
+      });
       return;
     }
 
@@ -456,7 +456,11 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setIsSuccess(true);
+        toast({
+          title: 'Success!',
+          description:
+            'Your message has been sent successfully! We will get back to you shortly.',
+        });
         setFormData({
           name: '',
           email: '',
@@ -477,11 +481,19 @@ export default function Contact() {
         } catch {
           // Ignore JSON parse errors
         }
-        setError(message);
+        toast({
+          title: 'Error',
+          description: message,
+          variant: 'destructive',
+        });
       }
     } catch (err) {
       console.error('Error submitting form:', err);
-      setError('Network error. Please try again later.');
+      toast({
+        title: 'Network Error',
+        description: 'Network error. Please try again later.',
+        variant: 'destructive',
+      });
     } finally {
       setIsLoading(false);
     }
@@ -489,8 +501,8 @@ export default function Contact() {
 
   const createRipple = (event: React.MouseEvent<HTMLButtonElement>) => {
     const button = event.currentTarget;
-    // Only create ripple if not loading or already successful
-    if (isLoading || isSuccess) return;
+    // Only create ripple if not loading
+    if (isLoading) return;
 
     const ripple = document.createElement('span');
     const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -533,7 +545,7 @@ export default function Contact() {
             <h2 className="text-4xl md:text-5xl font-bold text-balance">
               Contact <span className="text-gold">Us</span>
             </h2>
-            <p className="text-xl text-gray-700">
+            <p className="text-lg text-gray-700">
               Get in touch with us today to see how we can help you
             </p>
           </div>
@@ -604,8 +616,17 @@ export default function Contact() {
                 <p className="text-gray-700 mb-4">
                   Schedule a free 30-minute consultation with our HR experts.
                 </p>
-                <Button className="w-full bg-gold text-white border border-gold hover:border-gold hover:bg-white hover:text-gold transition-all duration-300">
-                  Book Consultation
+                <Button
+                  asChild
+                  className="w-full py-4 bg-gold text-white border border-gold hover:border-gold hover:bg-white hover:text-gold transition-all duration-300"
+                >
+                  <a
+                    href="mailto:info@gloriaandyounghrconsulting.org?subject=Free%2030%20HR%20Consultation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book Consultation
+                  </a>
                 </Button>
               </div>
             </div>
@@ -740,16 +761,12 @@ export default function Contact() {
                   className="w-full bg-[#1A3A52] hover:bg-[#152e42] text-white py-6 text-lg relative overflow-hidden"
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                  disabled={isLoading || isSuccess} // Disable when loading or successful
+                  disabled={isLoading} // Disable when loading
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center gap-2">
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />{' '}
                       Sending...
-                    </span>
-                  ) : isSuccess ? (
-                    <span className="flex items-center justify-center gap-2">
-                      Message Sent! 🎉
                     </span>
                   ) : (
                     <>
@@ -783,17 +800,6 @@ export default function Contact() {
                     </>
                   )}
                 </Button>
-                {isSuccess && (
-                  <div className="mt-4 p-4 bg-green-100 text-green-800 rounded-md">
-                    Your message has been sent successfully! We will get back to
-                    you shortly.
-                  </div>
-                )}
-                {error && (
-                  <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-md">
-                    Error: {error}
-                  </div>
-                )}
               </form>
             </div>
           </div>

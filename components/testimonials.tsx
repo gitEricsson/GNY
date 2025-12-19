@@ -114,7 +114,7 @@ export default function Testimonials() {
                 What Our <span className="text-gold">Clients Say</span>
               </h2>
 
-              <p className="text-xl text-center text-gray-700">
+              <p className="text-lg leading-relaxed text-center text-gray-700">
                 Real feedback from businesses we've helped transform.
               </p>
 
@@ -195,7 +195,7 @@ export default function Testimonials() {
                   >
                     <Quote className="text-gold opacity-80 w-16 h-16 mb-6" />
 
-                    <p className="text-xl text-gray-700 leading-relaxed italic mb-6">
+                    <p className="text-lg text-gray-700 leading-relaxed italic mb-6">
                       "{t.content}"
                     </p>
 
@@ -246,7 +246,7 @@ export default function Testimonials() {
                 >
                   <Card className="p-10 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/30 shadow-sm hover:shadow-xl transition duration-300">
                     <Quote className="text-gold opacity-80 w-14 h-14 mb-4" />
-                    <p className="text-xl text-gray-700 italic leading-relaxed mb-4">
+                    <p className="text-lg text-gray-700 italic leading-relaxed mb-4">
                       {t.content}
                     </p>
 

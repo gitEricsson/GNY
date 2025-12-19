@@ -82,17 +82,17 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
               Gloria & Young
             </motion.h1>
             <motion.p
-              className="text-gold mt-2 tracking-widest uppercase text-sm"
+              className="text-gold mt-1 tracking-widest uppercase text-lg"
               variants={itemVariants}
             >
               HR Consulting Ltd
             </motion.p>
             {/* 3. Motto Fade-In (Slightly more delayed) */}
             <motion.p
-              className="text-[#1A3A52] mt-4 text-lg font-medium italic"
+              className="text-[#1A3A52] mt-4 text-sm font-medium italic"
               variants={itemVariants}
             >
-              Our Expertise. Your Advantage.
+              Your Culture. Your People. Your Growth. Our Expertise.
             </motion.p>
           </motion.div>
         </motion.div>

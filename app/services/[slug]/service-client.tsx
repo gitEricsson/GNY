@@ -152,7 +152,7 @@ export default function ServiceClient({
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-12 tracking-tight font-serif text-balance">
               {service.title}
             </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed">
               {service.description}
             </p>
           </motion.div>
@@ -588,7 +588,10 @@ export default function ServiceClient({
                   Ready to transform your {service.title.toLowerCase()}?
                 </p>
                 <Link href="/#contact">
-                  <Button className="bg-gold text-white border border-gold hover:border-gold hover:bg-white hover:text-gold transition-all duration-300 font-semibold relative overflow-hidden group">
+                  <Button
+                    size="lg"
+                    className="bg-gold text-white border border-gold hover:border-gold hover:bg-white hover:text-gold transition-all duration-300 font-semibold relative overflow-hidden group"
+                  >
                     Get in Touch Today
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     <div className="absolute inset-0 bg-black/10 transform scale-0 group-active:scale-150 transition-transform duration-500 rounded-full origin-center"></div>

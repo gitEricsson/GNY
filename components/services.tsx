@@ -158,7 +158,7 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="pt-5 pd-20 lg:py-24 bg-gray-50 relative overflow-hidden scroll-mt-20"
+      className="pd-20 py-24 bg-gray-50 relative overflow-hidden scroll-mt-20"
     >
       {/* Background Pattern */}
       {/* Dot Pattern */}
@@ -182,14 +182,14 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl font-bold text-navy">
             Services <span className="text-gold">We Offer</span>
           </h2>
-          <p className="text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed">
             Freedom HR provides expert services that power forward-thinking in
             the most flexible, effective, and best-in-your-business.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 md:mb-16 lg:mb-0">
           {services.map((service, index) => (
             <motion.div
               key={index}

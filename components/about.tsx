@@ -19,9 +19,9 @@ const PEOPLE_DATA = [
   {
     sizePercent: 0.36,
     imageUrl: '/medium-shot-woman-working-as-lawyer.jpg',
-    startOffsetPercent: 0.1,
+    startOffsetPercent: 0.08,
   },
-  { sizePercent: 0.42, imageUrl: '/brand-bag.png', startOffsetPercent: 0.35 },
+  { sizePercent: 0.42, imageUrl: '/brand-bag.png', startOffsetPercent: 0.43 },
 ];
 
 const GREETING_TEXT = "We're Here To Help";
@@ -147,7 +147,7 @@ const About: React.FC = () => {
       primaryWords={GREETING_PRIMARY_WORDS_COUNT}
       highlightColor="white"
       defaultColor="var(--color-gold)"
-      className="text-4xl md:text-5xl font-extrabold mb-6"
+      className="text-4xl md:text-5xl font-serif font-extrabold mb-6"
     />
   );
 
@@ -156,7 +156,7 @@ const About: React.FC = () => {
       text={BODY_TEXT}
       primaryWords={0}
       defaultColor="var(--color-gray-300)"
-      className="text-lg md:text-xl font-body mb-10"
+      className="text-lg mb-10"
     />
   );
 
@@ -235,7 +235,7 @@ const About: React.FC = () => {
           </motion.div>
           <a href="/about" className="inline-block w-fit">
             <motion.button
-              className="bg-gold text-primary-foreground px-8 py-3 rounded-md font-semibold relative text-white border border-gold hover:border-gold hover:bg-white hover:text-gold transition-all duration-300 relative overflow-hidden group"
+              className="bg-gold text-primary-foreground px-6 py-4 rounded-md font-semibold relative text-white border border-gold hover:border-gold hover:bg-white hover:text-gold transition-all duration-300 relative overflow-hidden group"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 1.6, duration: 0.5 }}
