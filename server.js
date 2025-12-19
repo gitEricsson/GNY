@@ -1,0 +1,26 @@
+const { createServer } = require('http');
+const next = require('next');
+
+const port = Number.parseInt(process.env.PORT, 10) || 3000;
+const hostname = process.env.HOSTNAME || '0.0.0.0';
+const dev = process.env.NODE_ENV !== 'production';
+
+const app = next({ dev, hostname, port });
+const handle = app.getRequestHandler();
+
+app
+  .prepare()
+  .then(() => {
+    createServer((req, res) => {
+      handle(req, res);
+    }).listen(port, hostname, (err) => {
+      if (err) throw err;
+      // eslint-disable-next-line no-console
+      console.log(`> Ready on http://${hostname}:${port}`);
+    });
+  })
+  .catch((err) => {
+    // eslint-disable-next-line no-console
+    console.error('Error starting server:', err);
+    process.exit(1);
+  });
