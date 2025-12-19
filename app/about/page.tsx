@@ -405,7 +405,7 @@ export default function AboutPage() {
       {/* --- THE FOUNDER (Dr. Gloria) --- */}
       <section className="py-32 bg-navy text-white relative overflow-hidden">
         {/* Background Texture */}
-        <div className="absolute inset-0 opacity-10 bg-[url('/noise.png')] mix-blend-overlay" />
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/classy-fabric.png')] mix-blend-overlay opacity-90" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
