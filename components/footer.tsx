@@ -25,7 +25,7 @@ const socialLinks = [
   {
     name: 'WhatsApp',
     Icon: MessageCircle,
-    href: 'https://wa.me/2347066031588',
+    href: 'https://wa.me/2347078744141',
   },
 ];
 
@@ -177,9 +177,9 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-gold">Get in Touch</h3>
             <div className="space-y-3 text-sm">
               <p className="text-gray-300">
-                G58-Unit 2, Road 9C, Lekki Garden Estate Phase 2, Lagos
+                Road 9C, Lekki Garden Estate Phase 2, Lagos
               </p>
-              <p className="text-gray-300">+234 706 603 1588</p>
+              <p className="text-gray-300">+234 707 874 4141</p>
               <p className="text-gray-300">
                 info@gloriaandyounghrconsulting.org
               </p>
@@ -191,10 +191,18 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
             <p>
-              © {currentYear} Gloria & Young HR Consulting Ltd. All rights
-              reserved.
+              © {currentYear} · Gloria & Young HR Consulting Ltd · All rights
+              reserved | Designed & Developed by{' '}
+              <a
+                href="https://github.com/gitEricsson"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold hover:text-[#800020] transition-colors duration-300"
+              >
+                Ericsson Raphael
+              </a>
             </p>
-            <div className="flex gap-6">
+            {/* <div className="flex gap-6">
               <Link
                 href="#"
                 className="hover:text-gold transition-colors duration-300"
@@ -213,7 +221,7 @@ export default function Footer() {
               >
                 FAQs
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

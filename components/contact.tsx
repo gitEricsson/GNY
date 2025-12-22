@@ -130,7 +130,7 @@
 //                   {
 //                     icon: Phone,
 //                     label: 'Phone',
-//                     value: '+234 706 603 1588',
+//                     value: '+234 707 874 4141',
 //                     subtext: 'Mon-Fri from 9am to 5pm',
 //                   },
 //                   {
@@ -571,14 +571,13 @@ export default function Contact() {
                   {
                     icon: MapPin,
                     label: 'Headquarter',
-                    value:
-                      'G58-Unit 2, Road 9C, Lekki Garden Estate Phase 2, Lagos',
+                    value: 'Road 9C, Lekki Garden Estate Phase 2, Lagos',
                     subtext: 'Monday - Friday | 9am - 5pm',
                   },
                   {
                     icon: Phone,
                     label: 'Phone',
-                    value: '+234 706 603 1588',
+                    value: '+234 707 874 4141',
                     subtext: 'Mon-Fri from 9am to 5pm',
                   },
                   {

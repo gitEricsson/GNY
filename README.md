@@ -205,4 +205,5 @@ Namecheap hosting varies by plan:
 Gloria & Young HR Consulting Ltd
 
 - **Email**: info@gloriaandyounghrconsulting.org
-- **Phone**: +234 706 603 1588
+- **Phone**: +234 707 874 4141
+- **WhatsApp**: +234 707 874 4141
